@@ -3,11 +3,16 @@ import './index.css'
 // Write your code here
 
 const TabItem = props => {
-  const {eachTab} = props
+  const {eachTab, onChangeTabItem} = props
   const {tabId, displayText} = eachTab
+  const onChangeTab = () => {
+    onChangeTabItem(tabId)
+  }
   return (
     <li className="tab-item">
-      <button>{displayText}</button>
+      <button type="button" onClick={onChangeTab}>
+        {displayText}
+      </button>
     </li>
   )
 }
